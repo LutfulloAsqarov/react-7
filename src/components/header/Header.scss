@@ -1,0 +1,98 @@
+#header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background: #fff;
+    z-index: 9;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    &__list {
+        display: flex;
+        z-index: 999;
+        gap: 30px;
+        align-items: center;
+        transition: 0.4s;
+        &__item {
+            transition: 0.3s;
+            &:hover {
+                color: #ff0000;
+            }
+        }
+    }
+    &__search {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        position: relative;
+        &-result {
+            position: absolute;
+            top: calc(100% + 2px);
+            left: 0;
+            width: 100%;
+            height: auto;
+            max-height: 300px;
+            overflow: scroll;
+            scrollbar-width: none;
+            padding: 10px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 3px 5px 10px #0002;
+        }
+        &-input {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: #fff;
+            padding: 10px 20px;
+            border: 1px solid gray;
+            border-radius: 5px;
+            input {
+                border: none;
+                outline: none;
+                background: transparent;
+            }
+        }
+    }
+    &__bar {
+        font-size: 20px;
+        display: none;
+    }
+    @media (max-width: 900px) {
+        &__list {
+            position: absolute;
+            top: 0;
+            left: -300px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: 300px;
+            background: #000;
+            color: #fff;
+        }
+        &__bar {
+            display: block;
+        }
+    }
+    &__show {
+        left: 0;
+    }
+    @media (max-width: 550px) {
+        flex-direction: column;
+    }
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background: #0005;
+    z-index: 9;
+}
